@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<br lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Audio samples from "EXPERIMENTS WITH MELSPECTROGRAM AUGMENTATION FOR SEQUENCE TO SEQUENCE VOICE CONVERSION"</title>
+    <link href="../static/bootstrap-4.1.3-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  </head>
+  </br>
+    <div >
+      <img src="../static/images/01_netmarble_BI.png" width="300">
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+    <div class="p-3 mb-2 ">
+        <header>
+          <h2 align="center">Audio samples from</h2>
+          <h1 align="center">"Experiments With Melspectrogram Augmentation For Sequence To Sequence Voice Conversion"</h1>
+        </header>
+        </br>
+        </br>
+        <p><b>Paper:</b> <a href="https://arxiv.org/abs/">arXiv</a></p>
+
+        <p><b>Authors:</b> Yeong-Tae Hwang, Hyemin Cho, Hongsun Yang </p>
+
+        <div><b>Abstract: ~~</b>
+        </div>
+
+    </div>
+
+    <p class="toc_title">Contents</p>
+    <div id="toc_container">
+      <ul>
+	<li><a href="#data-augmentation">Section 1: Melspectrogram Augmentation</a></li>
+	<li><a href="#Datavolum">Section 2: Evaluation results using various data volume</a></li>
+	<li><a href="#single-augmentation-policy">Section 3: Single Augmentation Policy</a></li>
+	<li><a href="#multiple-augmentation-policy">Section 4: Multiple Augmentation Policy</a></li>
+    <li><a href="#acknowledgements">Acknowledgments</a></li>
+      </ul>
+    </div>
+
+    </br>
+    </br>
+
+    <br>
+      <a name="data-augmentation"><h2>Section 1: Melspectrogram Augmentation</h2></a>
+      <div>
+        In this section, we introduce Mel-spectrogram augmentation. The model is trained by KSS dataset.
+      </div>
+      </br>
+      <p><b> sentence : 우리는 오늘, 우리 조선이 독립국이며 조선인이 자주민임을 선언합니다. </b></p>
+      </br>
+      <table>
+        <tbody>
+        <tr>
+          <td  align="left" style="padding-right:300px"><p><b>Original</b></p></td>
+        </tr>
+        <tr>
+          <td style="padding-right:50px"><img src="../static/images/none.png" width="300" /></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/none.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align="left" style="padding-right:10px"><p><b>(1) Time masking (Number of Masking=1)</b></p></td>
+          <td align="center" style="padding-right:30px">T=2</td>
+          <td align="center" style="padding-right:30px">T=4</td>
+          <td align="center" style="padding-right:30px">T=6</td>
+          <td align="center" style="padding-right:30px">T=8</td>
+          <td align="center" style="padding-right:30px">T=10</td>
+          <td align="center" style="padding-right:30px">T=12</td>
+          <td align="center" style="padding-right:30px">T=14</td>
+          <td align="center" style="padding-right:30px">T=16</td>
+        </tr>
+        <tr>
+          <td style="padding-right:50px"><img src="../static/images/tm.png" width="300" /></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tm_2.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tm_4.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tm_6.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tm_8.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tm_10.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tm_12.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tm_14.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tm_16.wav"></audio></td>
+        </tr>
+        <tr>
+          <td  align="left" style="padding-right:10px"><p><b>(2) Frequency masking (Number of Masking=1)</b></p></td>
+          <td align="center" style="padding-right:30px">F=2</td>
+          <td align="center" style="padding-right:30px">F=4</td>
+          <td align="center" style="padding-right:30px">F=6</td>
+          <td align="center" style="padding-right:30px">F=8</td>
+          <td align="center" style="padding-right:30px">F=10</td>
+          <td align="center" style="padding-right:30px">F=12</td>
+          <td align="center" style="padding-right:30px">F=14</td>
+          <td align="center" style="padding-right:30px">F=16</td>
+        </tr>
+        <tr>
+          <td style="padding-right:50px"><img src="../static/images/fm.png" width="300" /></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fm_2.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fm_4.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fm_6.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fm_8.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fm_10.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fm_12.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fm_14.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fm_16.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align="left" style="padding-right:10px"><p><b>(3) Time warping</b></p></td>
+          <td align="center" style="padding-right:30px">W=0.2</td>
+          <td align="center" style="padding-right:30px">W=0.4</td>
+          <td align="center" style="padding-right:30px">W=0.6</td>
+          <td align="center" style="padding-right:30px">W=0.8</td>
+          <td align="center" style="padding-right:30px">W=0.10</td>
+          <td align="center" style="padding-right:30px">W=0.12</td>
+          <td align="center" style="padding-right:30px">W=0.14</td>
+          <td align="center" style="padding-right:30px">W=0.16</td>
+        </tr>
+        <tr>
+          <td style="padding-right:50px"><img src="../static/images/tw.png" width="300" /></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tw_2.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tw_4.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tw_6.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tw_8.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tw_10.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tw_12.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tw_14.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tw_16.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align="left" style="padding-right:10px"><p><b>(4) Frequency warping</b></p></td>
+          <td align="center" style="padding-right:30px">H=2</td>
+          <td align="center" style="padding-right:30px">H=4</td>
+          <td align="center" style="padding-right:30px">H=6</td>
+          <td align="center" style="padding-right:30px">H=8</td>
+          <td align="center" style="padding-right:30px">H=10</td>
+          <td align="center" style="padding-right:30px">H=12</td>
+          <td align="center" style="padding-right:30px">H=14</td>
+          <td align="center" style="padding-right:30px">H=16</td>
+        </tr>
+        <tr>
+          <td style="padding-right:50px"><img src="../static/images/fw.png" width="300" /></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fw_2.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fw_4.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fw_6.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fw_8.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fw_10.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fw_12.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fw_14.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/fw_16.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align="left" style="padding-right:10px"><p><b>(5) Time length control</b></p></td>
+          <td align="center" style="padding-right:30px">L=0.02</td>
+          <td align="center" style="padding-right:30px">L=0.04</td>
+          <td align="center" style="padding-right:30px">L=0.06</td>
+          <td align="center" style="padding-right:30px">L=0.08</td>
+          <td align="center" style="padding-right:30px">L=0.10</td>
+          <td align="center" style="padding-right:30px">L=0.12</td>
+          <td align="center" style="padding-right:30px">L=0.14</td>
+          <td align="center" style="padding-right:30px">L=0.16</td>
+        </tr>
+        <tr>
+          <td style="padding-right:50px"><img src="../static/images/tla.png" width="300" /></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tla_2.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tla_4.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tla_6.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tla_8.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tla_10.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tla_12.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tla_14.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/tla_16.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align="left" style="padding-right:10px"><p><b>(6) Volume control</b></p></td>
+          <td align="center" style="padding-right:30px">&lambda;=0.02</td>
+          <td align="center" style="padding-right:30px">&lambda;=0.04</td>
+          <td align="center" style="padding-right:30px">&lambda;=0.08</td>
+          <td align="center" style="padding-right:30px">&lambda;=0.16</td>
+          <td align="center" style="padding-right:30px">&lambda;=0.32</td>
+          <td align="center" style="padding-right:30px">&lambda;=0.64</td>
+        </tr>
+        <tr>
+          <td style="padding-right:50px"><img src="../static/images/volume.png" width="300" /></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/val_2.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/val_4.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/val_8.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/val_16.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/val_32.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/section1/val_64.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    </br>
+    </br>
+    </br>
+    <div>
+      <a name="Datavolum"><h2>Section 2: Evaluation results using various data volume</h2></a>
+      <div>
+        In this section, we shows the results with 100k iteration and early stopping. Higher diagonality did not not give better performance in all respects.
+      </div>
+      </br>
+      <p><b> sentence : 이 열차는 잠시 후 서울역에 도착합니다.</b></p>
+      </br>
+      <table>
+        <tbody>
+        <tr>
+          <td align="center" style="padding-right:30px"><p><b>Volumes</b></p></td>
+          <td align="center" style="padding-bottom:30px; padding-right:30px">1</td>
+          <td align="center" style="padding-bottom:30px; padding-right:30px">1/2</td>
+          <td align="center" style="padding-bottom:30px; padding-right:30px">1/4</td>
+          <td align="center" style="padding-bottom:30px; padding-right:30px">1/8</td>
+          <td align="center" style="padding-bottom:30px; padding-right:30px">1/16</td>
+        </tr>
+        <tr>
+          <td align="left" style="padding-right:30px"><p><b>10**5 iteration</b></p></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/data_volume_100000/none_8_100000_test/wavs/wavenet-audio-mel_20.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/data_volume_100000/none_4_100000_test/wavs/wavenet-audio-mel_20.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/data_volume_100000/none_2_100000_test/wavs/wavenet-audio-mel_20.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/data_volume_100000/none_1_100000_test/wavs/wavenet-audio-mel_20.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/data_volume_100000/none_0_5_100000_test/wavs/wavenet-audio-mel_20.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align="left" style="padding-right:30px"><p><b>Early Stopping</b></p></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/data_volume_es_test_new/none_8_90000_test/wavs/wavenet-audio-mel_20.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/data_volume_es_test_new/none_4_45000_test/wavs/wavenet-audio-mel_20.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/data_volume_es_test_new/none_2_95000_test/wavs/wavenet-audio-mel_20.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/data_volume_es_test_new/none_1_95000_test/wavs/wavenet-audio-mel_20.wav"></audio></td>
+          <td align="center" style="padding-right:30px"><audio controls=""><source src="../static/music/data_volume_es_test_new/none_0_5_75000_test/wavs/wavenet-audio-mel_20.wav"></audio></td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    </br>
+    <div>
+      <a name="single-augmentation-policy"><h2>Section 3: Single Augmentation Policy</h2></a>
+
+      <div>
+        In this section, we present examples of running ~~~~.
+      </div>
+      </br>
+      <div>
+        <b>reference sentence 1:</b>
+        <span><i>우리 회사는 근무요건이 좋은 편입니다.</i></span>
+      </div>
+      <div>
+        <b>reference sentence 2:</b>
+        <span><i>영화관에서 전화기를 꺼주세요.</i></span>
+      </div>
+      </br>
+      <table >
+        <tbody>
+          <tr>
+            <td align="center"> <strong>Augmentation</strong> </td>
+            <td align="center"> &nbsp;&nbsp;&nbsp;&nbsp; </td>
+            <td align="center"> <strong>Audio</strong> </td>
+            <td align="center"> <strong>Mel-spectrogram</strong> </td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="center"><i>&nbsp;original&nbsp;&nbsp;</i></td>
+            <td>&nbsp;&nbsp;</td>
+            <td style="padding-top:10px"><audio controls=""><source src="../static/music/data_volume_es_test_new/none_0_5_75000_test/wavs/wavenet-audio-mel_8.wav"></audio></td>
+            <td rowspan="2" style="padding-top:20px; padding-bottom:20px"><img src="../static/images/none.png" width="700" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding-bottom:10px"><audio controls=""><source src="../static/music/data_volume_es_test_new/none_0_5_75000_test/wavs/wavenet-audio-mel_48.wav"></audio></td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="center"><i>time warping</i></td>
+            <td>&nbsp;&nbsp;</td>
+            <td style="padding-top:10px"><audio controls="" ><source src="../static/music/0_5_aug_es_test_new/tw_0_5_50000_test/wavs/wavenet-audio-mel_8.wav"></audio></td>
+            <td rowspan="2" class="style8" style="padding-top:20px; padding-bottom:20px"><img src="../static/images/tw.png" width="700" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding-bottom:10px"><audio controls=""><source src="../static/music/0_5_aug_es_test_new/tw_0_5_50000_test/wavs/wavenet-audio-mel_48.wav"></audio></td>
+          </tr>
+
+          <tr>
+            <td rowspan="2" align="center"><i>time masking</i></td>
+            <td>&nbsp;&nbsp;</td>
+            <td style="padding-top:10px"><audio controls=""><source src="../static/music/0_5_aug_es_test_new/tm_0_5_50000_test/wavs/wavenet-audio-mel_8.wav"></audio></td>
+            <td rowspan="2" class="style8" style="padding-top:20px; padding-bottom:20px"><img src="../static/images/tm.png" width="700" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding-bottom:10px"><audio controls=""><source src="../static/music/0_5_aug_es_test_new/tm_0_5_50000_test/wavs/wavenet-audio-mel_48.wav"></audio></td>
+
+          </tr>
+          <tr>
+            <td rowspan="2" align="center"><i>frequency warping</i></td>
+            <td>&nbsp;&nbsp;</td>
+            <td style="padding-top:10px"><audio controls=""><source src="../static/music/0_5_aug_es_test_new/fw_0_5_45000_test/wavs/wavenet-audio-mel_8.wav"></audio></td>
+            <td rowspan="2" class="style8" style="padding-top:20px; padding-bottom:20px"><img src="../static/images/fw.png" width="700" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding-bottom:10px"><audio controls=""><source src="../static/music/0_5_aug_es_test_new/fw_0_5_45000_test/wavs/wavenet-audio-mel_48.wav"></audio></td>
+          </tr>
+
+          <tr>
+            <td rowspan="2" align="center"><i>frequency masking</i></td>
+            <td>&nbsp;&nbsp;</td>
+            <td style="padding-top:10px"><audio controls=""><source src="../static/music/0_5_aug_es_test_new/fm_0_5_95000_test/wavs/wavenet-audio-mel_8.wav"></audio></td>
+            <td rowspan="2" class="style8" style="padding-top:20px; padding-bottom:20px"><img src="../static/images/fm.png" width="700" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding-bottom:10px"><audio controls=""><source src="../static/music/0_5_aug_es_test_new/fm_0_5_95000_test/wavs/wavenet-audio-mel_48.wav"></audio></td>
+          </tr>
+
+          <tr>
+            <td rowspan="2" align="center"><i>time length adjustment</i></td>
+            <td>&nbsp;&nbsp;</td>
+            <td style="padding-top:10px"><audio controls=""><source src="../static/music/0_5_aug_es_test_new/tla_d_0_5_90000_test/wavs/wavenet-audio-mel_8.wav"></audio></td>
+            <td rowspan="2" class="style8" style="padding-top:20px; padding-bottom:20px"><img src="../static/images/tla.png" width="670" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding-bottom:10px"><audio controls=""><source src="../static/music/0_5_aug_es_test_new/tla_d_0_5_90000_test/wavs/wavenet-audio-mel_48.wav"></audio></td>
+          </tr>
+
+          <tr>
+            <td rowspan="2" align="center"><i>volume</i></td>
+            <td>&nbsp;&nbsp;</td>
+            <td style="padding-top:10px"><audio controls=""><source src="../static/music/0_5_aug_es_test_new/value_0_5_30000_test/wavs/wavenet-audio-mel_8.wav"></audio></td>
+            <td rowspan="2" class="style8" style="padding-top:20px; padding-bottom:20px" ><img src="../static/images/volume.png" width="700" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding-bottom:10px"><audio controls=""><source src="../static/music/0_5_aug_es_test_new/value_0_5_30000_test/wavs/wavenet-audio-mel_8.wav"></audio></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br/>
+
+    <p/>
+    <br/>
+    <div>
+      <a name="multiple-augmentation-policy"><h2>Section 3: Multiple Augmentation Policy</h2></a>
+      <div>
+        In this section,
+      </div>
+
+      </br>
+      <table>
+        <tbody>
+        <tr>
+          <td align="center"> hyperparameter </td>
+          <td align="center"> hyperparameter </td>
+          <td align="center"> hyperparameter </td>
+          <td align="center"> hyperparameter </td>
+          <td align="center"> hyperparameter </td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_output.wav"></audio></td>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_output.wav"></audio></td>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_output.wav"></audio></td>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_output.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align="center"> hyperparameter </td>
+          <td align="center"> hyperparameter </td>
+          <td align="center"> hyperparameter </td>
+          <td align="center"> hyperparameter </td>
+          <td align="center"> hyperparameter </td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_output.wav"></audio></td>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_output.wav"></audio></td>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_output.wav"></audio></td>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_output.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align="center"> hyperparameter </td>
+          <td align="center"> hyperparameter </td>
+          <td align="center"> hyperparameter </td>
+          <td align="center"> hyperparameter </td>
+          <td align="center"> hyperparameter </td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_output.wav"></audio></td>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_output.wav"></audio></td>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_output.wav"></audio></td>
+          <td><audio controls=""><source src="audio/separation_vctk/00_separate_output.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p/>
+    </br>
+
+    <div>
+      <a name="test"><h2>Section 4: 뭘까요</h2></a>
+      <div>
+        English sentence test
+      </div>
+
+      </br>
+      <table>
+        <tbody>
+        <tr>
+          <td align="center"> Sentence 1:  샘플 영어 문장</td>
+          <td align="center"> Sentence 2:  샘플 영어 문장</td>
+        </tr>
+
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/01_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/01_norm_output.wav"></audio></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/02_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/02_norm_output.wav"></audio></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/03_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/03_norm_output.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/04_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/04_norm_output.wav"></audio></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/05_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/05_norm_output.wav"></audio></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/06_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/06_norm_output.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/07_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/07_norm_output.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p/>
+
+    <br/>
+
+    <div>
+      <a name="eng-data-test"><h2>Section 5: VCTK dataset</h2></a>
+      <div>
+        English sentence test
+      </div>
+
+      </br>
+      <table>
+        <tbody>
+        <tr>
+          <td align="center"> Sentence 1:  샘플 영어 문장</td>
+          <td align="center"> Sentence 2:  샘플 영어 문장</td>
+        </tr>
+
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/01_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/01_norm_output.wav"></audio></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/02_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/02_norm_output.wav"></audio></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/03_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/03_norm_output.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/04_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/04_norm_output.wav"></audio></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/05_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/05_norm_output.wav"></audio></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/06_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/06_norm_output.wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td><audio controls=""><source src="audio/norm_vctk/07_norm_input.wav"></audio></td>
+          <td><audio controls=""><source src="audio/norm_vctk/07_norm_output.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p/>
+
+    <br/>
+    <a name="acknowledgements"><h2>Acknowledgments</h2></a>
+    <div>
+      We thank
+    </div>
+
+  <script src="/static/jquery/jquery-3.3.1.min.js"></script>
+  <script src="/static/bootstrap-4.1.3-dist/js/bootstrap.js"></script>
+
+</body></html>
