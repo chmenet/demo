@@ -30,11 +30,12 @@
 
         <div>
           <b>Abstract:</b>
+          When training the sequence to sequence voice conversion model, we need to handle an issue of insufficient data about the number of speech tuples which consist of the same utterance.
           This study experimentally investigated the effects of Mel-spectrogram augmentation on the sequence to sequence voice conversion model.
           For Mel-spectrogram augmentation, we adopted the policies proposed in <a href="https://arxiv.org/abs/1904.08779">SpecAugment</a>.
-          Also, we propose new policies for more data variations.
-          To find the appropriate hyperparameters for each policy, we experimented based on the new metric of deformation per deteriorating.
-          We observed the effect of these through experiments based on various dataset volumes and combinations of augmentation policy.
+          In addition, we propose new policies for more data variations.
+          To find the optimal hyperparameters of augmentation policies for voice conversion, we experimented based on the new metric, namely deformation per deteriorating ratio. We observed the effect of these through experiments based on various sizes of training set and combinations of augmentation policy.
+          In the experimental results, time warping based policies showed the better performance than other policies.
         </div>
     </div>
 
@@ -45,7 +46,7 @@
     <li><a href="#Validation">Validation metric: attention alignment diagonality</a></li>
 	<li><a href="#Datavolum">The effect of size of training data.</a></li>
 	<li><a href="#single-augmentation-policy">The effect of each policy.</a></li>
-	<li><a href="#single-augmentation-policy-data-volume">The effect of policies based on time warping with various size of training data.</a></li>
+	<li><a href="#single-augmentation-policy-data-volume">The effect of policies based on time warping with various sizes of training data.</a></li>
     <li><a href="#prosody-control">Future work: Prosody control with Mel-spectrogram augmentation.</a></li>
     <li><a href="#acknowledgements">Acknowledgments</a></li>
       </ul>
@@ -232,11 +233,11 @@
     <div>
       <a name="Datavolum"><h2>The effect of the size of training data.</h2></a>
       <div>
-        The whole size of the training data used in the experiment is approximately 8 hours each for the source speaker and the target speaker.
+        The whole The size of training data used in the experiment is approximately 8 hours each for the source speaker and the target speaker.
         We experimented by reducing the number of training data to half of it each time from the whole training set till it reaches to 1/16 training set.
         <br><br>
-        <p>Followings are original audios.</p>
-        <p><b> [original audio samples] </b></p>
+        <p>Followings are source audios.</p>
+        <!--<p><b> [original audio samples] </b></p>-->
         <table>
           <tbody>
           <tr>
@@ -270,7 +271,7 @@
       <table>
         <tbody>
         <tr>
-          <td align="center" style="padding-right:20px"><p><b>Size of the training data</b></p></td>
+          <td align="center" style="padding-right:20px"><p><b>The size of training data</b></p></td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/2</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/4</td>
@@ -300,7 +301,7 @@
       <table>
         <tbody>
         <tr>
-          <td align="center" style="padding-right:20px"><p><b>Size of the training data</b></p></td>
+          <td align="center" style="padding-right:20px"><p><b>The size of training data</b></p></td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/2</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/4</td>
@@ -330,7 +331,7 @@
       <table>
         <tbody>
         <tr>
-          <td align="center" style="padding-right:20px"><p><b>Size of the training data</b></p></td>
+          <td align="center" style="padding-right:20px"><p><b>The size of training data</b></p></td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/2</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/4</td>
@@ -360,7 +361,7 @@
       <table>
         <tbody>
         <tr>
-          <td align="center" style="padding-right:20px"><p><b>Size of the training data</b></p></td>
+          <td align="center" style="padding-right:20px"><p><b>The size of training data</b></p></td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/2</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/4</td>
@@ -390,7 +391,7 @@
       <table>
         <tbody>
         <tr>
-          <td align="center" style="padding-right:20px"><p><b>Size of the training data</b></p></td>
+          <td align="center" style="padding-right:20px"><p><b>The size of training data</b></p></td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/2</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/4</td>
@@ -639,7 +640,7 @@
       <table>
         <tbody>
         <tr>
-          <td align="center" style="padding-right:20px"><p><b>Size of the training data</b></p></td>
+          <td align="center" style="padding-right:20px"><p><b>The size of training data</b></p></td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/2</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/4</td>
