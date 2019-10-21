@@ -46,7 +46,7 @@
 	<li><a href="#Datavolum">The effect of size of training data.</a></li>
 	<li><a href="#single-augmentation-policy">The effect of each policy.</a></li>
 	<li><a href="#single-augmentation-policy-data-volume">The effect of policies based on time warping with various size of training data.</a></li>
-    <li><a href="#prosody-control">Prosody control with Mel-spectrogram augmentation.</a></li>
+    <li><a href="#prosody-control">Future work: Prosody control with Mel-spectrogram augmentation.</a></li>
     <li><a href="#acknowledgements">Acknowledgments</a></li>
       </ul>
     </div>
@@ -228,11 +228,39 @@
         <img src = "static/images/AAD.png" width="1000">
       </div>
     </div>
+    <br><br>
     <div>
       <a name="Datavolum"><h2>The effect of the size of training data.</h2></a>
       <div>
         The whole size of the training data used in the experiment is approximately 8 hours each for the source speaker and the target speaker.
         We experimented by reducing the number of training data to half of it each time from the whole training set till it reaches to 1/16 training set.
+        <br><br>
+        <p>Followings are original audios.</p>
+        <p><b> [original audio samples] </b></p>
+        <table>
+          <tbody>
+          <tr>
+            <td align="left" style="padding-right:20px; padding-bottom: 20px"><p><b>sentence 1: 이 열차는 잠시 후 서울역에 도착합니다.</b></p></td>
+            <td align="center" style="padding-right:20px; padding-bottom: 20px"><audio controls=""><source src="static/music/kss/4_5482.wav"></audio></td>
+          </tr>
+          <tr>
+          <td align="left" style="padding-right:20px; padding-bottom: 20px"><p><b>sentence 2: 한 가지 여쭤봐도 될까요?</b></p></td>
+          <td align="center" style="padding-right:20px; padding-bottom: 20px"><audio controls=""><source src="static/music/kss/4_5466.wav"></audio></td>
+          </tr>
+          <tr>
+            <td align="left" style="padding-right:20px; padding-bottom: 20px"><p><b>sentence 3: 저는 동양의 역사에 관심이 있어요.</b></p></td>
+            <td align="center" style="padding-right:20px; padding-bottom: 20px"><audio controls=""><source src="static/music/kss/4_5472.wav"></audio></td>
+          </tr>
+          <tr>
+            <td align="left" style="padding-right:20px; padding-bottom: 20px"><p><b>sentence 4: 연기가 너무 많이 나는 것 같아요.</b></p></td>
+            <td align="center" style="padding-right:20px; padding-bottom: 20px"><audio controls=""><source src="static/music/kss/4_5514.wav"></audio></td>
+          </tr>
+          <tr>
+            <td align="left" style="padding-right:20px; padding-bottom: 20px"><p><b>sentence 5: 다음 번엔 공부 더 열심히 할게요.</b></p></td>
+            <td align="center" style="padding-right:20px; padding-bottom: 20px"><audio controls=""><source src="static/music/kss/4_5494.wav"></audio></td>
+          </tr>
+          </tbody>
+        </table>
         <br><br>
         The following audio samples were synthesized from the Seq2Seq VC model by learning with the different sizes of training data without applying Mel-spectrogram augmentation.
         <br>- The audios were decoded with Wavenet vocoder using synthesized Mel-spectrograms as inputs.
@@ -241,10 +269,6 @@
       <p><b> sentence 1: 이 열차는 잠시 후 서울역에 도착합니다.</b></p>
       <table>
         <tbody>
-        <tr>
-          <td align="center" style="padding-right:20px; padding-bottom: 20px"><p><b>original wav</b></p></td>
-          <td align="center" style="padding-right:20px; padding-bottom: 20px"><audio controls=""><source src="static/music/kss/4_5482.wav"></audio></td>
-        </tr>
         <tr>
           <td align="center" style="padding-right:20px"><p><b>Size of the training data</b></p></td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1</td>
@@ -276,10 +300,6 @@
       <table>
         <tbody>
         <tr>
-          <td align="center" style="padding-right:20px; padding-bottom: 20px"><p><b>original wav</b></p></td>
-          <td align="center" style="padding-right:20px; padding-bottom: 20px"><audio controls=""><source src="static/music/kss/4_5466.wav"></audio></td>
-        </tr>
-        <tr>
           <td align="center" style="padding-right:20px"><p><b>Size of the training data</b></p></td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/2</td>
@@ -309,10 +329,6 @@
       <p><b> sentence 3: 저는 동양의 역사에 관심이 있어요.</b></p>
       <table>
         <tbody>
-        <tr>
-          <td align="center" style="padding-right:20px; padding-bottom: 20px"><p><b>original wav</b></p></td>
-          <td align="center" style="padding-right:20px; padding-bottom: 20px"><audio controls=""><source src="static/music/kss/4_5472.wav"></audio></td>
-        </tr>
         <tr>
           <td align="center" style="padding-right:20px"><p><b>Size of the training data</b></p></td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1</td>
@@ -344,10 +360,6 @@
       <table>
         <tbody>
         <tr>
-          <td align="center" style="padding-right:20px; padding-bottom: 20px"><p><b>original wav</b></p></td>
-          <td align="center" style="padding-right:20px; padding-bottom: 20px"><audio controls=""><source src="static/music/kss/4_5514.wav"></audio></td>
-        </tr>
-        <tr>
           <td align="center" style="padding-right:20px"><p><b>Size of the training data</b></p></td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1</td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1/2</td>
@@ -377,10 +389,6 @@
       <p><b> sentence 5: 다음 번엔 공부 더 열심히 할게요.</b></p>
       <table>
         <tbody>
-        <tr>
-          <td align="center" style="padding-right:20px; padding-bottom: 20px"><p><b>original wav</b></p></td>
-          <td align="center" style="padding-right:20px; padding-bottom: 20px"><audio controls=""><source src="static/music/kss/4_5494.wav"></audio></td>
-        </tr>
         <tr>
           <td align="center" style="padding-right:20px"><p><b>Size of the training data</b></p></td>
           <td align="center" style="padding-bottom:20px; padding-right:20px">1</td>
