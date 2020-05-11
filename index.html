@@ -30,12 +30,14 @@
 
         <div>
           <b>Abstract:</b>
-          When training the sequence to sequence voice conversion model, we need to handle an issue of insufficient data about the number of speech tuples which consist of the same utterance.
-          This study experimentally investigated the effects of Mel-spectrogram augmentation on the sequence to sequence voice conversion model.
-          For Mel-spectrogram augmentation, we adopted the policies proposed in <a href="https://arxiv.org/abs/1904.08779">SpecAugment</a>.
-          In addition, we propose new policies for more data variations.
-          To find the optimal hyperparameters of augmentation policies for voice conversion, we experimented based on the new metric, namely deformation per deteriorating ratio. We observed the effect of these through experiments based on various sizes of training set and combinations of augmentation policy.
-          In the experimental results, time warping based policies showed the better performance than other policies.
+            For training the sequence-to-sequence voice conversion model, we need to handle an issue of insufficient data about the number of speech pairs which consist of the same utterance.
+            This study experimentally investigated the effects of Mel-spectrogram augmentation on training the sequence-to-sequence voice conversion (VC) model from scratch.
+            For Mel-spectrogram augmentation, we adopted the policies proposed in <a href="https://arxiv.org/abs/1904.08779">SpecAugment</a>..
+            In addition, we proposed new policies (i.e., frequency warping, loudness and time length control) for more data variations .
+            Moreover, to find the appropriate hyperparameters of augmentation policies without training the VC model, we proposed hyperparameter search strategy and the new metric for reducing experimental cost, namely deformation per deteriorating ratio.
+            We compared the effect of these Mel-spectrogram augmentation methods based on various sizes of training set and augmentation policies.
+            In the experimental results, the time axis warping based policies (i.e., time length control and time warping.) showed better performance than other policies.
+            These results indicate that the use of the Mel-spectrogram augmentation is more beneficial for training the VC model.
         </div>
     </div>
 
@@ -577,11 +579,6 @@
       </div>
     </div>
     </br>
-
-{#    <a name="acknowledgements"><h2>Acknowledgments</h2></a>#}
-{#    <div>#}
-{#      We thank reseach engineers in Netmarble Corporation, Particularly Shounan An, Youshin Lim, Seulji Lee, and Kwangyong Lee.#}
-{#    </div>#}
 
   <script src="static/jquery/jquery-3.3.1.min.js"></script>
   <script src="static/bootstrap-4.1.3-dist/js/bootstrap.js"></script>
